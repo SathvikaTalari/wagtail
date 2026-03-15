@@ -67,9 +67,13 @@ def email_management_enabled():
 
 
 def password_reset_enabled():
-    return getattr(
-        settings, "WAGTAIL_PASSWORD_RESET_ENABLED", password_management_enabled()
-    )
+    # Check for new setting first, then fall back to old setting for backwards compatibility
+    if hasattr(settings, "WAGTAIL_PASSWORD_RESET_ENABLED"):
+        return getattr(settings, "WAGTAIL_PASSWORD_RESET_ENABLED")
+    # Fall back to old WAGTAILUSERS_PASSWORD_RESET_ENABLED setting
+    if hasattr(settings, "WAGTAILUSERS_PASSWORD_RESET_ENABLED"):
+        return getattr(settings, "WAGTAILUSERS_PASSWORD_RESET_ENABLED")
+    return password_management_enabled()
 
 
 # Tabs
