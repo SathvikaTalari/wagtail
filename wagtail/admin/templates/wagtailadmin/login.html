@@ -36,9 +36,7 @@
                     {% formattedfield form.username %}
                     {% formattedfield form.password %}
 
-                    {% if show_password_reset %}
-                        <a class="reset-password" href="{% url 'wagtailadmin_password_reset' %}">{% trans "Forgotten password?" %}</a>
-                    {% endif %}
+
 
                     {% block extra_fields %}
                         {% for field_name, field in form.extra_fields %}
