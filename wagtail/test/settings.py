@@ -299,6 +299,9 @@ REST_FRAMEWORK = {
 # Disable redirect autocreation for the majority of tests (to improve efficiency)
 WAGTAILREDIRECTS_AUTO_CREATE = False
 
+# Disable password reset for testing purposes
+WAGTAILUSERS_PASSWORD_RESET_ENABLED = False
+
 
 # https://github.com/wagtail/wagtail/issues/2551 - projects should be able to set
 # MESSAGE_TAGS for their own purposes without them leaking into Wagtail admin styles.
