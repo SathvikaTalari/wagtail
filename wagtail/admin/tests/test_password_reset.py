@@ -34,6 +34,13 @@ class TestUserPasswordReset(WagtailTestUtils, TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertNotContains(response, "Forgotten password?")
 
+    @override_settings(WAGTAILUSERS_PASSWORD_RESET_ENABLED=False)
+    def test_login_has_no_password_reset_option_with_old_setting_name(self):
+        """Test backwards compatibility with old WAGTAILUSERS_PASSWORD_RESET_ENABLED setting"""
+        response = self.client.get(reverse("wagtailadmin_login"))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotContains(response, "Forgotten password?")
+
     @override_settings(WAGTAIL_PASSWORD_RESET_ENABLED=False)
     def test_password_reset_view_disabled(self):
         """
