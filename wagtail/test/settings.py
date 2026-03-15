@@ -300,7 +300,7 @@ REST_FRAMEWORK = {
 WAGTAILREDIRECTS_AUTO_CREATE = False
 
 # Disable password reset for testing purposes
-WAGTAILUSERS_PASSWORD_RESET_ENABLED = False
+WAGTAIL_PASSWORD_RESET_ENABLED = False
 
 
 # https://github.com/wagtail/wagtail/issues/2551 - projects should be able to set
