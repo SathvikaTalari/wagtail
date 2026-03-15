@@ -15,6 +15,7 @@ class LoginForm(AuthenticationForm):
             }
         ),
         strip=False,
+        help_text="",
     )
 
     remember = forms.BooleanField(required=False)

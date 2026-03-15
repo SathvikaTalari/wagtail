@@ -1236,10 +1236,6 @@ msgstr ""
 msgid "Sign in to Wagtail"
 msgstr ""
 
-#: templates/wagtailadmin/login.html:40
-msgid "Forgotten password?"
-msgstr ""
-
 #: templates/wagtailadmin/login.html:49
 msgid "Remember me"
 msgstr ""
